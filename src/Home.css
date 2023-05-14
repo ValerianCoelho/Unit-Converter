@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #15162B;
+}
+
+a{
+    border-radius: 20px;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    text-decoration: none;
+}
+
+.icon{
+    height: 75%;
+    background-color: #302F4F;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tag{
+    height: 25%;
+    background-color: #22223E;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
