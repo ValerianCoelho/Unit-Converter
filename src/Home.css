@@ -28,6 +28,8 @@ a{
     width: 100px;
     height: 100px;
     text-decoration: none;
+    overflow: clip;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .5);
 }
 
 .icon{
