@@ -1,11 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
-
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
+
+.select-menu-wrapper{
+    box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+    border-radius: 16px;
+}
+
 .result{
     display: flex;
     justify-content: center;
@@ -41,15 +45,20 @@
     border-radius: 8px;
     background: #22223E;
     display: none;
+    width: 100%;
 }
 .select-menu.open .options{
     position: absolute;
     display: block;
-    background-color: #22223E;
+    background-color: rgba(34, 34, 62, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 7px;
 }
 .options .option{
     display: flex;
-    height: 55px;
+    height: 40px;
     cursor: pointer;
     padding: 0 16px;
     border-radius: 8px;
@@ -59,6 +68,8 @@
 }
 .options .option:hover{
     background: #302F4F;
+    background-color: rgba(48, 47, 79, 0.5);
+    backdrop-filter: blur(10px);
 }
 .option .option-text{
     font-size: 18px;

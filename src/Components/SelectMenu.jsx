@@ -17,7 +17,7 @@ function SelectMenu(props) {
   }
 
   return (
-    <>
+    <div className='select-menu-wrapper'>
       <div className="result">{result}</div>
       <div className={`select-menu ${isOpen ? 'open' : ''}`}> 
         <div className="select-btn" onClick={toggleMenu}>
@@ -34,7 +34,7 @@ function SelectMenu(props) {
           </ul>
         )}
       </div>
-    </>
+    </div>
   );
 }
 

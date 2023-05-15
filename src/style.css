@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Imprima&family=Irish+Grover&display=swap');
+
 *{
     margin: 0;
     padding: 0;
+    font-family: 'Imprima', sans-serif;
 }
 body{
     display: flex;
@@ -11,18 +14,21 @@ body{
 
 .wrapper{
     position: relative;
+    bottom: 50px;
 }
 
 .backBtn{
     position: absolute;
-    right: 0;
-    top: 0;
-    width: 20%;
-    height: 20%;
+    right: -200px;
+    top: -70px;
+    width: 35%;
+    height: 35%;
 }
 
 .title{
-    font-size: 40px;
+    font-size: 50px;
+    font-family: 'Irish Grover', cursive;
+    margin-bottom: 70px;
 }
 
 .conversion{
@@ -33,13 +39,14 @@ body{
 }
 
 .equal{
-    width: 10%;
-    height: 10%;
+    width: 7%;
+    height: 7%;
 }
 
 .formula{
     margin-top: 50px;
     color: white;
+    text-align: center;
 }
 
 .highlighted{
@@ -47,4 +54,5 @@ body{
     padding: 5px;
     border-radius: 7px;
     font-weight: bold;
+    font-size: 15px;
 }
