@@ -10,7 +10,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 250px;
+    width: 180px;
     background-color: #302F4F;
     padding: 2px;
     font-size: 18px;
@@ -19,7 +19,7 @@
     color: white;
 }
 .select-menu{
-    width: 250px;
+    width: 180px;
 }
 .select-menu .select-btn{
     display: flex;

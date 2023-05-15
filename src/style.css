@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.wrapper{
+    position: relative;
+}
+
+.backBtn{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 20%;
+    height: 20%;
+}
+
+.title{
+    font-size: 40px;
+}
+
+.conversion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.equal{
+    width: 10%;
+    height: 10%;
+}
+
+.formula{
+    margin-top: 50px;
+    color: white;
+}
+
+.highlighted{
+    background-color: #EC9C00;
+    padding: 5px;
+    border-radius: 7px;
+    font-weight: bold;
+}
