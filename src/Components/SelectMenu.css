@@ -20,6 +20,7 @@
 }
 .select-menu{
     width: 180px;
+    position: relative;
 }
 .select-menu .select-btn{
     display: flex;
@@ -42,13 +43,9 @@
     display: none;
 }
 .select-menu.open .options{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 100%;
-    width: 100%;
-    flex-grow: 1;
+    position: absolute;
+    display: block;
+    background-color: #22223E;
 }
 .options .option{
     display: flex;
