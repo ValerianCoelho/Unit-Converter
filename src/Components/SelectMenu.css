@@ -6,32 +6,49 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
+.result{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    background-color: #302F4F;
+    padding: 2px;
+    font-size: 18px;
+    height: 55px;
+    border-radius: 16px 16px 0 0;
+    color: white;
+}
 .select-menu{
     width: 250px;
-    margin: 140px auto;
 }
 .select-menu .select-btn{
     display: flex;
     height: 55px;
-    background: #fff;
+    background: #22223E;
     padding: 20px;
     font-size: 18px;
     font-weight: 400;
-    border-radius: 8px;
+    border-radius: 0 0 16px 16px;
+    justify-content: center;
     align-items: center;
     cursor: pointer;
-    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    color: white;
 }
 .select-menu .options{
     padding: 20px;
     margin-top: 10px;
     border-radius: 8px;
-    background: #fff;
-    box-shadow: 0 0 3px rgba(0,0,0,0.1);
+    background: #22223E;
     display: none;
 }
 .select-menu.open .options{
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    flex-grow: 1;
 }
 .options .option{
     display: flex;
@@ -40,12 +57,11 @@
     padding: 0 16px;
     border-radius: 8px;
     align-items: center;
-    background: #fff;
 }
 .options .option:hover{
-    background: #F2F2F2;
+    background: #302F4F;
 }
 .option .option-text{
     font-size: 18px;
-    color: #333;
+    color: white;
 }
