@@ -18,7 +18,8 @@ function SelectMenu(props) {
 
   return (
     <div className='select-menu-wrapper'>
-      <div className="result">{result}</div>
+      <input className="result" defaultValue={result} />
+
       <div className={`select-menu ${isOpen ? 'open' : ''}`}> 
         <div className="select-btn" onClick={toggleMenu}>
           <span className="sBtn-text">{selectedOption}</span>

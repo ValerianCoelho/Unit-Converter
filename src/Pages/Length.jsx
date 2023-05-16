@@ -31,7 +31,7 @@ export default function Length() {
         </svg>
         <div className="RHS">
           <SelectMenu
-            result="1"
+            result="100"
             options={['Meter', 'Centimeter', 'Millimeter', 'Kilometer', 'Feet']}
             defaultOption="Meter"
             onOptionSelect={handleCountrySelect}
