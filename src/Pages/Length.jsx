@@ -3,6 +3,24 @@ import SelectMenu from '../Components/SelectMenu';
 import '../style.css'
 
 export default function Length() {
+  const [LHS, setLHS] = useState(1);
+  const [RHS, setRHS] = useState(100);
+
+  // This function will be used to change the input/result of the opposite side i.e RHS or LHS
+  // This issue can be fixed using useEffect hook in react
+  function handleInputChange(result, side){
+    // console.log(result)
+    // setLHS(3);
+    // console.log('LHS : ' + LHS);
+     if(side == "LHS"){
+       setLHS(result);
+       setRHS(LHS*100);
+     }
+     else{
+      setRHS(result);
+      setLHS(result/100);
+     }
+  }
   return (
     <div className="wrapper">
       <div className="backBtn">
@@ -14,9 +32,10 @@ export default function Length() {
       <div className="conversion">
         <div className="LHS">
           <SelectMenu
-            result="1"
+            result={LHS}
             options={['Meter', 'Centimeter', 'Millimeter', 'Kilometer', 'Feet']}
             defaultOption="Meter"
+            handleChange={(result) => handleInputChange(result, "LHS")}
           />
         </div>
         <svg className="equal" width="85" height="85" viewBox="0 0 85 85" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -24,9 +43,10 @@ export default function Length() {
         </svg>
         <div className="RHS">
           <SelectMenu
-            result="100"
+            result={RHS}
             options={['Meter', 'Centimeter', 'Millimeter', 'Kilometer', 'Feet']}
-            defaultOption="Meter"
+            defaultOption="Centimeter"
+            handleChange={(result) => handleInputChange(result, "RHS")}
           />
         </div>
       </div>
