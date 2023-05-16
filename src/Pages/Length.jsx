@@ -3,12 +3,6 @@ import SelectMenu from '../Components/SelectMenu';
 import '../style.css'
 
 export default function Length() {
-  const [selectedCountry, setSelectedCountry] = useState('');
-
-  function handleCountrySelect(country) {
-    setSelectedCountry(country);
-  }
-
   return (
     <div className="wrapper">
       <div className="backBtn">
@@ -23,7 +17,6 @@ export default function Length() {
             result="1"
             options={['Meter', 'Centimeter', 'Millimeter', 'Kilometer', 'Feet']}
             defaultOption="Meter"
-            onOptionSelect={handleCountrySelect}
           />
         </div>
         <svg className="equal" width="85" height="85" viewBox="0 0 85 85" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -34,7 +27,6 @@ export default function Length() {
             result="100"
             options={['Meter', 'Centimeter', 'Millimeter', 'Kilometer', 'Feet']}
             defaultOption="Meter"
-            onOptionSelect={handleCountrySelect}
           />
         </div>
       </div>

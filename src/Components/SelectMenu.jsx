@@ -9,7 +9,6 @@ function SelectMenu(props) {
   function handleOptionClick(option) {
     setSelectedOption(option);
     setIsOpen(false);
-    props.onOptionSelect(option);
   }
 
   function toggleMenu() {
@@ -19,7 +18,6 @@ function SelectMenu(props) {
   return (
     <div className='select-menu-wrapper'>
       <input className="result" defaultValue={result} />
-
       <div className={`select-menu ${isOpen ? 'open' : ''}`}> 
         <div className="select-btn" onClick={toggleMenu}>
           <span className="sBtn-text">{selectedOption}</span>
