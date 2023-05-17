@@ -4,7 +4,6 @@ import './SelectMenu.css';
 function SelectMenu(props) {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState(props.defaultOption);
-  const [result, setResult] = useState(props.result);
 
   function handleOptionClick(option) {
     setSelectedOption(option);
@@ -17,7 +16,7 @@ function SelectMenu(props) {
 
   return (
     <div className='select-menu-wrapper'>
-      <input className="result" defaultValue={result} onChange={(e) => {props.handleChange(e.target.value)}}/>
+      <input className="result" value={props.result} onChange={props.handleChange}/>
       <div className={`select-menu ${isOpen ? 'open' : ''}`}> 
         <div className="select-btn" onClick={toggleMenu}>
           <span className="sBtn-text">{selectedOption}</span>

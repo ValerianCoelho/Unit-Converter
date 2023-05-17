@@ -27,6 +27,7 @@ export default function Length() {
       setRHS(result);
     }
   }
+
   return (
     <div className="wrapper">
       <div className="backBtn">
@@ -38,10 +39,10 @@ export default function Length() {
       <div className="conversion">
         <div className="LHS">
           <SelectMenu
-            result={LHS}
+            result={LHS || ""}
             options={['Meter', 'Centimeter', 'Millimeter', 'Kilometer', 'Feet']}
             defaultOption="Meter"
-            handleChange={(result) => handleInputChange(result, "LHS")}
+            handleChange={(e) => {handleInputChange(e.target.value, "LHS")}}
           />
         </div>
         <svg className="equal" width="85" height="85" viewBox="0 0 85 85" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -49,10 +50,10 @@ export default function Length() {
         </svg>
         <div className="RHS">
           <SelectMenu
-            result={RHS}
+            result={RHS || ""}
             options={['Meter', 'Centimeter', 'Millimeter', 'Kilometer', 'Feet']}
             defaultOption="Centimeter"
-            handleChange={(result) => handleInputChange(result, "RHS")}
+            handleChange={(e) => {handleInputChange(e.target.value, "RHS")}}
           />
         </div>
       </div>
