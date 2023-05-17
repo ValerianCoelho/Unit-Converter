@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import SelectMenu from '../Components/SelectMenu';
 import '../style.css'
 
@@ -6,20 +6,26 @@ export default function Length() {
   const [LHS, setLHS] = useState(1);
   const [RHS, setRHS] = useState(100);
 
-  // This function will be used to change the input/result of the opposite side i.e RHS or LHS
-  // This issue can be fixed using useEffect hook in react
-  function handleInputChange(result, side){
-    // console.log(result)
-    // setLHS(3);
-    // console.log('LHS : ' + LHS);
-     if(side == "LHS"){
-       setLHS(result);
-       setRHS(LHS*100);
-     }
-     else{
+  useEffect(() => {
+    if (LHS !== 0) {
+      setRHS(LHS * 100);
+      console.log("RHS : " + RHS);
+    }
+  }, [LHS]);
+
+  useEffect(() => {
+    if (RHS !== 0) {
+      setLHS(RHS / 100);
+      console.log("LHS : " + LHS);
+    }
+  }, [RHS]);
+
+  function handleInputChange(result, side) {
+    if (side === "LHS") {
+      setLHS(result);
+    } else {
       setRHS(result);
-      setLHS(result/100);
-     }
+    }
   }
   return (
     <div className="wrapper">
