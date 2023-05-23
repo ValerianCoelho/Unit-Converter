@@ -5,36 +5,42 @@ import '../style.css'
 export default function Length() {
   const length = {
     Meter: {
+      Meter: (value) => value,
       Centimeter: (value) => value * 100,
       Millimeter: (value) => value * 1000,
       Kilometer: (value) => value / 1000,
       Feet: (value) => value * 3.281
     },
     Centimeter: {
+      Centimeter: (value) => value,
       Meter: (value) => value / 100,
       Millimeter: (value) => value * 10,
       Kilometer: (value) => value / 100000,
       Feet: (value) => value * 0.03281
     },
     Millimeter: {
+      Millimeter: (value) => value,
       Meter: (value) => value / 1000,
       Centimeter: (value) => value / 10,
       Kilometer: (value) => value / 1000000,
       Feet: (value) => value * 0.003281
     },
     Kilometer: {
+      Kilometer: (value) => value,
       Meter: (value) => value * 1000,
       Centimeter: (value) => value * 100000,
       Millimeter: (value) => value * 1000000,
       Feet: (value) => value * 3281
     },
     Feet: {
+      Feet: (value) => value,
       Meter: (value) => value * 0.3048,
       Centimeter: (value) => value * 30.48,
       Millimeter: (value) => value * 304.8,
       Kilometer: (value) => value / 3281
     }
   };
+  
   
   
   const [LHSValue, setLHSValue] = useState(1);
@@ -48,6 +54,14 @@ export default function Length() {
   useEffect(() => {
     setLHSValue(length[RHSOption][LHSOption](RHSValue));
   }, [RHSValue]);
+  useEffect(() => {
+    setRHSValue(length[LHSOption][RHSOption](LHSValue));
+    console.log(LHSOption);
+  }, [LHSOption]);
+  useEffect(() => {
+    setLHSValue(length[RHSOption][LHSOption](RHSValue));
+    console.log(RHSOption);
+  }, [RHSOption]);
 
   return (
     <div className="wrapper">
@@ -64,7 +78,7 @@ export default function Length() {
             options={['Meter', 'Centimeter', 'Millimeter', 'Kilometer', 'Feet']}
             defaultOption={LHSOption}
             handleInputChange={(e) => {setLHSValue(e.target.value)}}
-            handleOptionChange={(option) => {setLHSOption(option)}}
+            handleOptionChange={(option) => {setLHSOption(option);}}
           />
         </div>
         <svg className="equal" width="85" height="85" viewBox="0 0 85 85" fill="none" xmlns="http://www.w3.org/2000/svg">
