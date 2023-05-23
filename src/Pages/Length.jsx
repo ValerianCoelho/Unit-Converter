@@ -50,19 +50,11 @@ export default function Length() {
 
   useEffect(() => {
     setRHSValue(length[LHSOption][RHSOption](LHSValue));
-  }, [LHSValue]);
+  }, [LHSValue, LHSOption]);
   useEffect(() => {
     setLHSValue(length[RHSOption][LHSOption](RHSValue));
-  }, [RHSValue]);
-  useEffect(() => {
-    setRHSValue(length[LHSOption][RHSOption](LHSValue));
-    console.log(LHSOption);
-  }, [LHSOption]);
-  useEffect(() => {
-    setLHSValue(length[RHSOption][LHSOption](RHSValue));
-    console.log(RHSOption);
-  }, [RHSOption]);
-
+  }, [RHSValue, RHSOption]);
+  
   return (
     <div className="wrapper">
       <div className="backBtn">
