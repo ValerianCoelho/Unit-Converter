@@ -3,30 +3,52 @@ import SelectMenu from '../Components/SelectMenu';
 import '../style.css'
 
 export default function Length() {
-  const [LHS, setLHS] = useState(1);
-  const [RHS, setRHS] = useState(100);
+  const length = {
+    "Meter": {
+      "Centimeter": (value) => value * 100,
+      "Millimeter": (value) => value * 1000,
+      "Kilometer": (value) => value / 1000,
+      "Feet": (value) => value * 3.281
+    },
+    "Centimeter": {
+      "Meter": (value) => value / 100,
+      "Millimeter": (value) => value * 10,
+      "Kilometer": (value) => value / 100000,
+      "Feet": (value) => value * 0.03281
+    },
+    "Millimeter": {
+      "Meter": (value) => value / 1000,
+      "Centimeter": (value) => value / 10,
+      "Kilometer": (value) => value / 1000000,
+      "Feet": (value) => value * 0.003281
+    },
+    "Kilometer": {
+      "Meter": (value) => value * 1000,
+      "Centimeter": (value) => value * 100000,
+      "Millimeter": (value) => value * 1000000,
+      "Feet": (value) => value * 3281
+    },
+    "Feet": {
+      "Meter": (value) => value * 0.3048,
+      "Centimeter": (value) => value * 30.48,
+      "Millimeter": (value) => value * 304.8,
+      "Kilometer": (value) => value / 3281
+    }
+  };
+  
+  const [LHSValue, setLHSValue] = useState(1);
+  const [RHSValue, setRHSValue] = useState(100);
+  const [LHSOption, setLHSOption] = useState("Meter");
+  const [RHSOption, setRHSOption] = useState("Centimeter");
 
   useEffect(() => {
-    if (LHS !== 0) {
-      setRHS(LHS * 100);
-      console.log("RHS : " + RHS);
-    }
-  }, [LHS]);
-
+    const result = length[LHSOption][RHSOption](LHSValue);
+    setRHSOption(result);
+  }, [LHSValue]);
   useEffect(() => {
-    if (RHS !== 0) {
-      setLHS(RHS / 100);
-      console.log("LHS : " + LHS);
-    }
-  }, [RHS]);
-
-  function handleInputChange(result, side) {
-    if (side === "LHS") {
-      setLHS(result);
-    } else {
-      setRHS(result);
-    }
-  }
+    const result = length[RHSOption][LHSOption](RHSValue);
+    setRHSOption(result);
+  }, [RHSValue]);
 
   return (
     <div className="wrapper">
@@ -37,23 +59,25 @@ export default function Length() {
       </div>
       <div className="title">Length</div>
       <div className="conversion">
-        <div className="LHS">
+        <div className="LHSValue">
           <SelectMenu
-            result={LHS || ""}
+            result={LHSValue || ""}
             options={['Meter', 'Centimeter', 'Millimeter', 'Kilometer', 'Feet']}
-            defaultOption="Meter"
-            handleChange={(e) => {handleInputChange(e.target.value, "LHS")}}
+            defaultOption={LHSOption}
+            handleInputChange={(e) => {setLHSValue(e.target.value)}}
+            handleOptionChange={(option) => {setLHSOption(option)}}
           />
         </div>
         <svg className="equal" width="85" height="85" viewBox="0 0 85 85" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M19.4791 60.2083C18.0034 60.2083 16.7485 59.6912 15.7143 58.6571C14.6802 57.6229 14.1643 56.3692 14.1666 54.8958C14.1666 53.4201 14.6837 52.1652 15.7179 51.131C16.7521 50.0969 18.0058 49.581 19.4791 49.5833H65.5208C66.9965 49.5833 68.2514 50.1004 69.2856 51.1346C70.3198 52.1687 70.8357 53.4225 70.8333 54.8958C70.8333 56.3715 70.3162 57.6265 69.282 58.6606C68.2479 59.6948 66.9941 60.2107 65.5208 60.2083H19.4791ZM19.4791 35.4167C18.0034 35.4167 16.7485 34.8996 15.7143 33.8654C14.6802 32.8312 14.1643 31.5775 14.1666 30.1042C14.1666 28.6285 14.6837 27.3735 15.7179 26.3394C16.7521 25.3052 18.0058 24.7893 19.4791 24.7917H65.5208C66.9965 24.7917 68.2514 25.3087 69.2856 26.3429C70.3198 27.3771 70.8357 28.6308 70.8333 30.1042C70.8333 31.5799 70.3162 32.8348 69.282 33.869C68.2479 34.9031 66.9941 35.419 65.5208 35.4167H19.4791Z" fill="#F8F8F8"/>
         </svg>
-        <div className="RHS">
+        <div className="RHSValue">
           <SelectMenu
-            result={RHS || ""}
+            result={RHSValue || ""}
             options={['Meter', 'Centimeter', 'Millimeter', 'Kilometer', 'Feet']}
-            defaultOption="Centimeter"
-            handleChange={(e) => {handleInputChange(e.target.value, "RHS")}}
+            defaultOption={RHSOption}
+            handleInputChange={(e) => {setRHSValue(e.target.value)}}
+            handleOptionChange={(option) => {setRHSOption(option)}}
           />
         </div>
       </div>
