@@ -4,37 +4,38 @@ import '../style.css'
 
 export default function Length() {
   const length = {
-    "Meter": {
-      "Centimeter": (value) => value * 100,
-      "Millimeter": (value) => value * 1000,
-      "Kilometer": (value) => value / 1000,
-      "Feet": (value) => value * 3.281
+    Meter: {
+      Centimeter: (value) => value * 100,
+      Millimeter: (value) => value * 1000,
+      Kilometer: (value) => value / 1000,
+      Feet: (value) => value * 3.281
     },
-    "Centimeter": {
-      "Meter": (value) => value / 100,
-      "Millimeter": (value) => value * 10,
-      "Kilometer": (value) => value / 100000,
-      "Feet": (value) => value * 0.03281
+    Centimeter: {
+      Meter: (value) => value / 100,
+      Millimeter: (value) => value * 10,
+      Kilometer: (value) => value / 100000,
+      Feet: (value) => value * 0.03281
     },
-    "Millimeter": {
-      "Meter": (value) => value / 1000,
-      "Centimeter": (value) => value / 10,
-      "Kilometer": (value) => value / 1000000,
-      "Feet": (value) => value * 0.003281
+    Millimeter: {
+      Meter: (value) => value / 1000,
+      Centimeter: (value) => value / 10,
+      Kilometer: (value) => value / 1000000,
+      Feet: (value) => value * 0.003281
     },
-    "Kilometer": {
-      "Meter": (value) => value * 1000,
-      "Centimeter": (value) => value * 100000,
-      "Millimeter": (value) => value * 1000000,
-      "Feet": (value) => value * 3281
+    Kilometer: {
+      Meter: (value) => value * 1000,
+      Centimeter: (value) => value * 100000,
+      Millimeter: (value) => value * 1000000,
+      Feet: (value) => value * 3281
     },
-    "Feet": {
-      "Meter": (value) => value * 0.3048,
-      "Centimeter": (value) => value * 30.48,
-      "Millimeter": (value) => value * 304.8,
-      "Kilometer": (value) => value / 3281
+    Feet: {
+      Meter: (value) => value * 0.3048,
+      Centimeter: (value) => value * 30.48,
+      Millimeter: (value) => value * 304.8,
+      Kilometer: (value) => value / 3281
     }
   };
+  
   
   const [LHSValue, setLHSValue] = useState(1);
   const [RHSValue, setRHSValue] = useState(100);
@@ -42,12 +43,10 @@ export default function Length() {
   const [RHSOption, setRHSOption] = useState("Centimeter");
 
   useEffect(() => {
-    const result = length[LHSOption][RHSOption](LHSValue);
-    setRHSOption(result);
+    setRHSValue(length[LHSOption][RHSOption](LHSValue));
   }, [LHSValue]);
   useEffect(() => {
-    const result = length[RHSOption][LHSOption](RHSValue);
-    setRHSOption(result);
+    setLHSValue(length[RHSOption][LHSOption](RHSValue));
   }, [RHSValue]);
 
   return (
