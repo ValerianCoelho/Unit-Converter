@@ -23,6 +23,7 @@ body{
     top: -70px;
     width: 35%;
     height: 35%;
+    box-shadow: none;
 }
 
 .title{
