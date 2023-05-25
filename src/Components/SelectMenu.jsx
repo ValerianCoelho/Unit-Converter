@@ -38,9 +38,3 @@ function SelectMenu(props) {
 }
 
 export default SelectMenu;
-
-{/* <SelectMenu
-  options={['India', 'USA', 'Canada', 'Australia', 'UK']}
-  defaultOption="Select your option"
-  onOptionSelect={handleCountrySelect}
-/> */}
