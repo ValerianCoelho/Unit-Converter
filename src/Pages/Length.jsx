@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 import '../style.css'
 
 export default function Length() {
-  const length = {
+  const conversionFormula = {
     Meter: {
       Meter: (value) => value,
       Centimeter: (value) => value * 100,
@@ -41,7 +41,44 @@ export default function Length() {
       Kilometer: (value) => value / 3281
     }
   };
-  
+  const conversionDescription = {
+    Meter: {
+      Meter: "The Length Value remains the same",
+      Centimeter: "Multiply the Length Value by One Hundred",
+      Millimeter: "Multiply the Length Value by One Thousand",
+      Kilometer: "Divide the Length Value by One Thousand",
+      Feet: "Multiply the Length Value by 3.281",
+    },
+    Centimeter: {
+      Centimeter: "The Length Value remains the same",
+      Meter: "Divide the Length Value by One Hundred",
+      Millimeter: "Multiply the Length Value by Ten",
+      Kilometer: "Divide the Length Value by One Hundred Thousand",
+      Feet: "Multiply the Length Value by 0.03281",
+    },
+    Millimeter: {
+      Millimeter: "The Length Value remains the same",
+      Meter: "Divide the Length Value by One Thousand",
+      Centimeter: "Divide the Length Value by Ten",
+      Kilometer: "Divide the Length Value by One Million",
+      Feet: "Multiply the Length Value by 0.003281",
+    },
+    Kilometer: {
+      Kilometer: "The Length Value remains the same",
+      Meter: "Multiply the Length Value by One Thousand",
+      Centimeter: "Multiply the Length Value by One Hundred Thousand",
+      Millimeter: "Multiply the Length Value by One Million",
+      Feet: "Multiply the Length Value by 3281",
+    },
+    Feet: {
+      Feet: "The Length Value remains the same",
+      Meter: "Multiply the Length Value by 0.3048",
+      Centimeter: "Multiply the Length Value by 30.48",
+      Millimeter: "Multiply the Length Value by 304.8",
+      Kilometer: "Divide the Length Value by 3281",
+    },
+  };
+
   const [LHSValue, setLHSValue] = useState(1);
   const [RHSValue, setRHSValue] = useState(100);
   const [LHSOption, setLHSOption] = useState("Meter");
@@ -52,13 +89,13 @@ export default function Length() {
     if(shouldUpdate == true){
       setshouldUpdate(false);
       console.log(shouldUpdate);
-      setRHSValue(length[LHSOption][RHSOption](LHSValue));
+      setRHSValue(conversionFormula[LHSOption][RHSOption](LHSValue));
     }
   }, [LHSValue, LHSOption]);
   useEffect(() => {
     if(shouldUpdate == true){
       setshouldUpdate(false);
-      setLHSValue(length[RHSOption][LHSOption](RHSValue));
+      setLHSValue(conversionFormula[RHSOption][LHSOption](RHSValue));
     }
   }, [RHSValue, RHSOption]);
   
@@ -93,8 +130,7 @@ export default function Length() {
           />
         </div>
       </div>
-      <pre className="formula"><span className="highlighted">Formula</span>   Multiply the Length Value By Hundered</pre>
+      <pre className="formula"><span className="highlighted">Formula</span>    {conversionDescription[LHSOption][RHSOption]}</pre>
     </div>
-  
   );
 }
