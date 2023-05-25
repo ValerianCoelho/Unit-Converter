@@ -4,14 +4,15 @@ import { Link } from 'react-router-dom';
 import '../style.css';
 
 export default function UnitConversionPage({ conversionFormula, conversionDescription, options, title}) {
-  const [LHSValue, setLHSValue] = useState(1); // Make this two lines
-  const [RHSValue, setRHSValue] = useState(100); // less dependent, and more efficient
   const [LHSOption, setLHSOption] = useState(options[0]);
   const [RHSOption, setRHSOption] = useState(options[1]);
+  const [LHSValue, setLHSValue] = useState(1);
+  const [RHSValue, setRHSValue] = useState(conversionFormula[LHSOption][RHSOption](LHSValue));
   const [shouldUpdate, setShouldUpdate] = useState(true);
 
   useEffect(() => {
     if (shouldUpdate) {
+      console.log("RHS Updated");
       setShouldUpdate(false);
       setRHSValue(conversionFormula[LHSOption][RHSOption](LHSValue));
     }
@@ -19,6 +20,7 @@ export default function UnitConversionPage({ conversionFormula, conversionDescri
 
   useEffect(() => {
     if (shouldUpdate) {
+      console.log("LHS Updated");
       setShouldUpdate(false);
       setLHSValue(conversionFormula[RHSOption][LHSOption](RHSValue));
     }
