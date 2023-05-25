@@ -41,18 +41,24 @@ export default function Length() {
     }
   };
   
-  
-  
   const [LHSValue, setLHSValue] = useState(1);
   const [RHSValue, setRHSValue] = useState(100);
   const [LHSOption, setLHSOption] = useState("Meter");
   const [RHSOption, setRHSOption] = useState("Centimeter");
+  const [shouldUpdate, setshouldUpdate] = useState(true);
 
   useEffect(() => {
-    setRHSValue(length[LHSOption][RHSOption](LHSValue));
+    if(shouldUpdate == true){
+      setshouldUpdate(false);
+      console.log(shouldUpdate);
+      setRHSValue(length[LHSOption][RHSOption](LHSValue));
+    }
   }, [LHSValue, LHSOption]);
   useEffect(() => {
-    setLHSValue(length[RHSOption][LHSOption](RHSValue));
+    if(shouldUpdate == true){
+      setshouldUpdate(false);
+      setLHSValue(length[RHSOption][LHSOption](RHSValue));
+    }
   }, [RHSValue, RHSOption]);
   
   return (
@@ -69,8 +75,8 @@ export default function Length() {
             result={LHSValue || ""}
             options={['Meter', 'Centimeter', 'Millimeter', 'Kilometer', 'Feet']}
             defaultOption={LHSOption}
-            handleInputChange={(e) => {setLHSValue(e.target.value)}}
-            handleOptionChange={(option) => {setLHSOption(option);}}
+            handleInputChange={(e) => {setLHSValue(e.target.value); setshouldUpdate(true);}}
+            handleOptionChange={(option) => {setLHSOption(option); setshouldUpdate(true);}}
           />
         </div>
         <svg className="equal" width="85" height="85" viewBox="0 0 85 85" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -81,8 +87,8 @@ export default function Length() {
             result={RHSValue || ""}
             options={['Meter', 'Centimeter', 'Millimeter', 'Kilometer', 'Feet']}
             defaultOption={RHSOption}
-            handleInputChange={(e) => {setRHSValue(e.target.value)}}
-            handleOptionChange={(option) => {setRHSOption(option)}}
+            handleInputChange={(e) => {setRHSValue(e.target.value); setshouldUpdate(true);}}
+            handleOptionChange={(option) => {setRHSOption(option); setshouldUpdate(true);}}
           />
         </div>
       </div>
