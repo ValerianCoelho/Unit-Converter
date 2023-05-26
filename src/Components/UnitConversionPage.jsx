@@ -12,17 +12,19 @@ export default function UnitConversionPage({ conversionFormula, conversionDescri
 
   useEffect(() => {
     if (shouldUpdate) {
-      console.log("RHS Updated");
+      const decimalPartLength = conversionFormula[LHSOption][RHSOption](LHSValue).toString().split(".")[0]?.length || 0;
+      const formattedNumber = decimalPartLength > 9 ? conversionFormula[LHSOption][RHSOption](LHSValue).toExponential() : conversionFormula[LHSOption][RHSOption](LHSValue).toFixed(2);
       setShouldUpdate(false);
-      setRHSValue(conversionFormula[LHSOption][RHSOption](LHSValue));
+      setRHSValue(formattedNumber);
     }
   }, [LHSValue, LHSOption]);
 
   useEffect(() => {
     if (shouldUpdate) {
-      console.log("LHS Updated");
+      const decimalPartLength = conversionFormula[RHSOption][LHSOption](RHSValue).toString().split(".")[0]?.length || 0;
+      const formattedNumber = decimalPartLength > 9 ? conversionFormula[RHSOption][LHSOption](RHSValue).toExponential() : conversionFormula[RHSOption][LHSOption](RHSValue).toFixed(2);
       setShouldUpdate(false);
-      setLHSValue(conversionFormula[RHSOption][LHSOption](RHSValue));
+      setLHSValue(formattedNumber);
     }
   }, [RHSValue, RHSOption]);
 
