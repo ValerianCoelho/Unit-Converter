@@ -1,7 +1,7 @@
 import React from 'react';
 import UnitConversionPage from '../Components/UnitConversionPage';
 
-function Length() {
+export default function Length() {
   const title = "Length";
   const options = ['Meter', 'Centimeter', 'Millimeter', 'Kilometer', 'Feet'];
   const conversionFormula = {
@@ -90,5 +90,3 @@ function Length() {
     </div>
   );
 }
-
-export default Length;
