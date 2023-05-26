@@ -6,35 +6,35 @@ export default function Area() {
     const options = ['SQ Meter', 'SQ Centimeter', 'SQ Kilometer', 'SQ Mile', 'SQ Yard'];
     const conversionFormula = {
       'SQ Meter': {
-        'SQ Meter': (value) => value,
+        'SQ Meter': (value) => value * 1,
         'SQ Centimeter': (value) => value * 10000,
         'SQ Kilometer': (value) => value / 1000000,
         'SQ Mile': (value) => value / 4047,
         'SQ Yard': (value) => value * 1.196
       },
       'SQ Centimeter': {
-        'SQ Centimeter': (value) => value,
+        'SQ Centimeter': (value) => value * 1,
         'SQ Meter': (value) => value / 10000,
         'SQ Kilometer': (value) => value / 10000000000,
         'SQ Mile': (value) => value / 2.59e+10,
         'SQ Yard': (value) => value / 8361
       },
       'SQ Kilometer': {
-        'SQ Kilometer': (value) => value,
+        'SQ Kilometer': (value) => value * 1,
         'SQ Meter': (value) => value * 1000000,
         'SQ Centimeter': (value) => value * 10000000000,
         'SQ Mile': (value) => value / 2.59,
         'SQ Yard': (value) => value * 1196000
       },
       'SQ Mile': {
-        'SQ Mile': (value) => value,
+        'SQ Mile': (value) => value * 1,
         'SQ Meter': (value) => value * 4047,
         'SQ Centimeter': (value) => value * 2.59e+10,
         'SQ Kilometer': (value) => value * 2.59,
         'SQ Yard': (value) => value * 3097600
       },
       'SQ Yard': {
-        'SQ Yard': (value) => value,
+        'SQ Yard': (value) => value * 1,
         'SQ Meter': (value) => value / 1.196,
         'SQ Centimeter': (value) => value * 8361,
         'SQ Kilometer': (value) => value / 1196000,

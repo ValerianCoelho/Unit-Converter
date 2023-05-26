@@ -6,35 +6,35 @@ export default function Length() {
   const options = ['Meter', 'Centimeter', 'Millimeter', 'Kilometer', 'Feet'];
   const conversionFormula = {
     Meter: {
-      Meter: (value) => value,
+      Meter: (value) => value * 1,
       Centimeter: (value) => value * 100,
       Millimeter: (value) => value * 1000,
       Kilometer: (value) => value / 1000,
       Feet: (value) => value * 3.281
     },
     Centimeter: {
-      Centimeter: (value) => value,
+      Centimeter: (value) => value * 1,
       Meter: (value) => value / 100,
       Millimeter: (value) => value * 10,
       Kilometer: (value) => value / 100000,
       Feet: (value) => value * 0.03281
     },
     Millimeter: {
-      Millimeter: (value) => value,
+      Millimeter: (value) => value * 1,
       Meter: (value) => value / 1000,
       Centimeter: (value) => value / 10,
       Kilometer: (value) => value / 1000000,
       Feet: (value) => value * 0.003281
     },
     Kilometer: {
-      Kilometer: (value) => value,
+      Kilometer: (value) => value * 1,
       Meter: (value) => value * 1000,
       Centimeter: (value) => value * 100000,
       Millimeter: (value) => value * 1000000,
       Feet: (value) => value * 3281
     },
     Feet: {
-      Feet: (value) => value,
+      Feet: (value) => value * 1,
       Meter: (value) => value * 0.3048,
       Centimeter: (value) => value * 30.48,
       Millimeter: (value) => value * 304.8,

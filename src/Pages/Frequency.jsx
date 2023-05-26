@@ -6,25 +6,25 @@ export default function Frequency() {
   const options = ['Hertz', 'Kilohertz', 'Megahertz', 'Gigahertz'];
   const conversionFormula = {
     Hertz: {
-      Hertz: (value) => value,
+      Hertz: (value) => value * 1,
       Kilohertz: (value) => value * 0.001,
       Megahertz: (value) => value * 1e-6,
       Gigahertz: (value) => value * 1e-9
     },
     Kilohertz: {
-      Kilohertz: (value) => value,
+      Kilohertz: (value) => value * 1,
       Hertz: (value) => value * 1000,
       Megahertz: (value) => value * 0.001,
       Gigahertz: (value) => value * 1e-6
     },
     Megahertz: {
-      Megahertz: (value) => value,
+      Megahertz: (value) => value * 1,
       Hertz: (value) => value * 1e6,
       Kilohertz: (value) => value * 1000,
       Gigahertz: (value) => value * 0.001
     },
     Gigahertz: {
-      Gigahertz: (value) => value,
+      Gigahertz: (value) => value * 1,
       Hertz: (value) => value * 1e9,
       Kilohertz: (value) => value * 1e6,
       Megahertz: (value) => value * 1000

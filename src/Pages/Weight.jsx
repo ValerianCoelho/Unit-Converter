@@ -6,25 +6,25 @@ export default function Weight() {
   const options = ['Kilogram', 'Gram', 'Pound', 'Ounce'];
   const conversionFormula = {
     Kilogram: {
-      Kilogram: (value) => value,
+      Kilogram: (value) => value * 1,
       Gram: (value) => value * 1000,
       Pound: (value) => value * 2.20462,
       Ounce: (value) => value * 35.27396
     },
     Gram: {
-      Gram: (value) => value,
+      Gram: (value) => value * 1,
       Kilogram: (value) => value / 1000,
       Pound: (value) => value * 0.00220462,
       Ounce: (value) => value * 0.03527396
     },
     Pound: {
-      Pound: (value) => value,
+      Pound: (value) => value * 1,
       Kilogram: (value) => value * 0.453592,
       Gram: (value) => value * 453.592,
       Ounce: (value) => value * 16
     },
     Ounce: {
-      Ounce: (value) => value,
+      Ounce: (value) => value * 1,
       Kilogram: (value) => value * 0.0283495,
       Gram: (value) => value * 28.3495,
       Pound: (value) => value * 0.0625

@@ -6,25 +6,25 @@ export default function Currency() {
   const options = ['USD', 'EUR', 'GBP', 'JPY'];
   const conversionFormula = {
     USD: {
-      USD: (value) => value,
+      USD: (value) => value * 1,
       EUR: (value) => value * 0.84,
       GBP: (value) => value * 0.72,
       JPY: (value) => value * 110.25
     },
     EUR: {
-      EUR: (value) => value,
+      EUR: (value) => value * 1,
       USD: (value) => value * 1.19,
       GBP: (value) => value * 0.86,
       JPY: (value) => value * 130.87
     },
     GBP: {
-      GBP: (value) => value,
+      GBP: (value) => value * 1,
       USD: (value) => value * 1.39,
       EUR: (value) => value * 1.16,
       JPY: (value) => value * 152.58
     },
     JPY: {
-      JPY: (value) => value,
+      JPY: (value) => value * 1,
       USD: (value) => value * 0.0091,
       EUR: (value) => value * 0.0076,
       GBP: (value) => value * 0.0066

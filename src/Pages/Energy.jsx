@@ -6,25 +6,25 @@ export default function Energy() {
   const options = ['Joule', 'Calorie', 'Kilocalorie', 'Electronvolt'];
   const conversionFormula = {
     Joule: {
-      Joule: (value) => value,
+      Joule: (value) => value * 1,
       Calorie: (value) => value * 0.239006,
       Kilocalorie: (value) => value * 0.000239006,
       Electronvolt: (value) => value * 6.242e+18
     },
     Calorie: {
-      Calorie: (value) => value,
+      Calorie: (value) => value * 1,
       Joule: (value) => value * 4.184,
       Kilocalorie: (value) => value * 0.001,
       Electronvolt: (value) => value * 2.613e+19
     },
     Kilocalorie: {
-      Kilocalorie: (value) => value,
+      Kilocalorie: (value) => value * 1,
       Joule: (value) => value * 4184,
       Calorie: (value) => value * 1000,
       Electronvolt: (value) => value * 2.613e+22
     },
     Electronvolt: {
-      Electronvolt: (value) => value,
+      Electronvolt: (value) => value * 1,
       Joule: (value) => value * 1.602e-19,
       Calorie: (value) => value * 3.829e-20,
       Kilocalorie: (value) => value * 3.829e-23

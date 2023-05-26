@@ -12,7 +12,7 @@ export default function UnitConversionPage({ conversionFormula, conversionDescri
 
   useEffect(() => {
     if (shouldUpdate) {
-      const decimalPartLength = conversionFormula[LHSOption][RHSOption](LHSValue).toString().split(".")[0]?.length || 0;
+      const decimalPartLength = conversionFormula[LHSOption][RHSOption](LHSValue).toString().split(".")[0].length || 0;
       const formattedNumber = decimalPartLength > 9 ? conversionFormula[LHSOption][RHSOption](LHSValue).toExponential() : conversionFormula[LHSOption][RHSOption](LHSValue).toFixed(2);
       setShouldUpdate(false);
       setRHSValue(formattedNumber);
@@ -21,7 +21,7 @@ export default function UnitConversionPage({ conversionFormula, conversionDescri
 
   useEffect(() => {
     if (shouldUpdate) {
-      const decimalPartLength = conversionFormula[RHSOption][LHSOption](RHSValue).toString().split(".")[0]?.length || 0;
+      const decimalPartLength = conversionFormula[RHSOption][LHSOption](RHSValue).toString().split(".")[0].length || 0;
       const formattedNumber = decimalPartLength > 9 ? conversionFormula[RHSOption][LHSOption](RHSValue).toExponential() : conversionFormula[RHSOption][LHSOption](RHSValue).toFixed(2);
       setShouldUpdate(false);
       setLHSValue(formattedNumber);

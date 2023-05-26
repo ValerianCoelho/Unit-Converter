@@ -6,17 +6,17 @@ export default function Temperature() {
   const options = ['Celsius', 'Fahrenheit', 'Kelvin'];
   const conversionFormula = {
     Celsius: {
-      Celsius: (value) => value,
+      Celsius: (value) => value * 1,
       Fahrenheit: (value) => (value * 9/5) + 32,
       Kelvin: (value) => value + 273.15
     },
     Fahrenheit: {
-      Fahrenheit: (value) => value,
+      Fahrenheit: (value) => value * 1,
       Celsius: (value) => (value - 32) * 5/9,
       Kelvin: (value) => (value + 459.67) * 5/9
     },
     Kelvin: {
-      Kelvin: (value) => value,
+      Kelvin: (value) => value * 1,
       Celsius: (value) => value - 273.15,
       Fahrenheit: (value) => (value * 9/5) - 459.67
     }

@@ -6,17 +6,17 @@ export default function Angle() {
   const options = ['Degree', 'Radian', 'Gradian'];
   const conversionFormula = {
     Degree: {
-      Degree: (value) => value,
+      Degree: (value) => value * 1,
       Radian: (value) => value * (Math.PI / 180),
       Gradian: (value) => value * (Math.PI / 200)
     },
     Radian: {
-      Radian: (value) => value,
+      Radian: (value) => value * 1,
       Degree: (value) => value * (180 / Math.PI),
       Gradian: (value) => value * (200 / Math.PI)
     },
     Gradian: {
-      Gradian: (value) => value,
+      Gradian: (value) => value * 1,
       Degree: (value) => value * (9 / 10),
       Radian: (value) => value * (Math.PI / 200)
     }

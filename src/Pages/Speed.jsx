@@ -6,25 +6,25 @@ export default function Speed() {
   const options = ['Meters/Second', 'Kilometers/Hour', 'Miles/Hour', 'Feet/Second'];
   const conversionFormula = {
     'Meters/Second': {
-      'Meters/Second': (value) => value,
+      'Meters/Second': (value) => value * 1,
       'Kilometers/Hour': (value) => value * 3.6,
       'Miles/Hour': (value) => value * 2.237,
       'Feet/Second': (value) => value * 3.281
     },
     'Kilometers/Hour': {
-      'Kilometers/Hour': (value) => value,
+      'Kilometers/Hour': (value) => value * 1,
       'Meters/Second': (value) => value / 3.6,
       'Miles/Hour': (value) => value * 0.6214,
       'Feet/Second': (value) => value * 0.9113
     },
     'Miles/Hour': {
-      'Miles/Hour': (value) => value,
+      'Miles/Hour': (value) => value * 1,
       'Meters/Second': (value) => value / 2.237,
       'Kilometers/Hour': (value) => value / 0.6214,
       'Feet/Second': (value) => value * 1.466
     },
     'Feet/Second': {
-      'Feet/Second': (value) => value,
+      'Feet/Second': (value) => value * 1,
       'Meters/Second': (value) => value / 3.281,
       'Kilometers/Hour': (value) => value / 0.9113,
       'Miles/Hour': (value) => value / 1.466
