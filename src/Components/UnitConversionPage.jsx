@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import SelectMenu from './SelectMenu';
 import { Link } from 'react-router-dom';
-import '../style.css';
+import './UnitConversionPage.css';
 
 export default function UnitConversionPage({ conversionFormula, conversionDescription, options, title}) {
   const [LHSOption, setLHSOption] = useState(options[0]);
