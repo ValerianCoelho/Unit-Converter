@@ -4,7 +4,7 @@ import './Home.css'
 export default function Home() {
   return (
     <div>
-      <h1 className="title">Unit Converter</h1>
+      <h1 className="project-title">Unit Converter</h1>
       <div className="grid">
         <Link to='/Length'>
           <div className="icon">
