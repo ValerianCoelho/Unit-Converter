@@ -21,13 +21,11 @@ function SelectMenu(props) {
       <div className={`select-menu ${isOpen ? 'open' : ''}`}> 
         <div className="select-btn" onClick={toggleMenu}>{selectedOption}</div>
 
-        {isOpen && (
-          <ul className="options">
-            {props.options.map((option) => (
-              <li key={option} className="option" onClick={() => handleOptionClick(option)}>{option}</li>
-            ))}
-          </ul>
-        )}
+        <ul className="options">
+          {props.options.map((option) => (
+            <li key={option} className="option" onClick={() => handleOptionClick(option)}>{option}</li>
+          ))}
+        </ul>
       </div>
     </div>
   );
