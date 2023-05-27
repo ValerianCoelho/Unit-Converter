@@ -31,33 +31,30 @@
 }
 .select-menu .select-btn{
     display: flex;
+    justify-content: center;
+    align-items: center;
     height: 55px;
     background: #22223E;
     padding: 20px;
     font-size: 18px;
     font-weight: 400;
     border-radius: 0 0 16px 16px;
-    justify-content: center;
-    align-items: center;
     cursor: pointer;
     color: white;
 }
 .select-menu .options{
-    padding: 20px;
-    margin-top: 10px;
-    border-radius: 8px;
-    background: #22223E;
-    display: none;
-    width: 100%;
-}
-.select-menu.open .options{
     position: absolute;
-    display: block;
+    margin-top: 10px;
+    width: 100%;
     background-color: rgba(34, 34, 62, 0.2);
     backdrop-filter: blur(10px);
-    border-radius: 10px;
+    display: none;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
     padding: 7px;
+}
+.select-menu.open .options{
+    display: block;
 }
 .options .option{
     display: flex;
