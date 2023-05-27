@@ -29,7 +29,7 @@
 }
 .select-menu{
     width: 180px;
-    position: relative;
+    position: absolute;
     overflow: hidden;
 }
 .select-menu .select-btn{
