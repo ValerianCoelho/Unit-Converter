@@ -68,13 +68,11 @@
     align-items: center;
     justify-content: center;
     width: 100%;
+    font-size: 18px;
+    color: white;
 }
 .options .option:hover{
     background: #302F4F;
     background-color: rgba(48, 47, 79, 0.5);
     backdrop-filter: blur(10px);
-}
-.option .option-text{
-    font-size: 18px;
-    color: white;
 }
