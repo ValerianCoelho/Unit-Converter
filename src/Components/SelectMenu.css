@@ -30,10 +30,9 @@
 .select-menu{
     width: 180px;
     position: relative;
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 .select-menu .select-btn{
-    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -45,10 +44,10 @@
     border-radius: 0 0 16px 16px;
     cursor: pointer;
     color: white;
+    position: relative;
     z-index: 1;
 }
 .select-menu .options{
-    position: absolute;
     margin-top: 10px;
     width: 100%;
     background-color: rgba(34, 34, 62, 0.2);
