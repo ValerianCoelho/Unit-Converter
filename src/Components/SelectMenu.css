@@ -11,6 +11,7 @@
 }
 
 .result{
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -24,12 +25,15 @@
     outline: none;
     border: none;
     text-align: center;
+    z-index: 1;
 }
 .select-menu{
     width: 180px;
     position: relative;
+    /* overflow: hidden; */
 }
 .select-menu .select-btn{
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -41,6 +45,7 @@
     border-radius: 0 0 16px 16px;
     cursor: pointer;
     color: white;
+    z-index: 1;
 }
 .select-menu .options{
     position: absolute;
@@ -48,13 +53,16 @@
     width: 100%;
     background-color: rgba(34, 34, 62, 0.2);
     backdrop-filter: blur(10px);
-    display: none;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     padding: 7px;
+    transform: translateY(-350px);
+    transition: ease .5s;
+    opacity: 0;
 }
 .select-menu.open .options{
-    display: block;
+    opacity: 1;
+    transform: translateY(0px);
 }
 .options .option{
     display: flex;
